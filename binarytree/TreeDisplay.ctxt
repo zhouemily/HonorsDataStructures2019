@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=TreeDisplay
+comment0.text=\n\ A\ graphical\ component\ for\ displaying\ the\ contents\ of\ a\ binary\ tree.\n\ The\ following\ methods\ are\ designed\ for\ interacting\ with\ the\ display\:\n\ \ \ \ \ \ Default\ constructor\ TreeDisplay()\n\ \ \ \ \ \ displayTree(TreeNode\ someTree)\n\ \ \ \ \ \ visit(TreeNode\ someNode)\n\ The\ displayTree\ method\ creates\ the\ initial\ display\ of\ the\ tree.\ \ It\ clears\ the\ component\n\ and\ paints\ the\ tree\n\ The\ visit\ method\ changes\ the\ background\ color\ of\ the\ node\ defined\ in\ the\ parameter\n\ sample\ Useage\:\n\ TreeDisplay\ display\ \=\ new\ TreeDisplay();\n\ display.displayTree(someTree);\n\ display.visit(someNode);\n\ \n\ @author\ DaveF\n\ @author\ RichardP\n\ @version\ 102613\n\n
+comment1.params=
+comment1.target=TreeDisplay()
+comment2.params=
+comment2.target=void\ run()
+comment3.params=
+comment3.target=java.awt.Dimension\ getPreferredSize()
+comment4.params=g
+comment4.target=void\ paint(java.awt.Graphics)
+comment5.params=g2\ t\ minX\ maxX\ y\ yIncr
+comment5.target=void\ drawTree(java.awt.Graphics2D,\ TreeNode,\ int,\ int,\ int,\ int)
+comment6.params=root
+comment6.target=void\ displayTree(TreeNode)
+comment6.text=\n\ displayTree\ tells\ the\ component\ to\ switch\ to\ displaying\ the\ given\ tree\n\ @param\ root\ is\ the\ root\ of\ the\ tree\ to\ display\n\ postcondition\:\ the\ component\ displays\ the\ tree\ defined\ by\ root\n
+comment7.params=t
+comment7.target=void\ visit(TreeNode)
+comment7.text=\n\ visit\ changes\ the\ background\ color\ of\ the\ node\ given\ in\ the\ parameter\ to\ yellow,\n\ lighting\ up\ the\ node\ to\ indicate\ we\ are\ visiting\ it.\n\ @param\ t\ the\ node\ to\ light\ up\n\ postcondition\:\ the\ background\ color\ on\ the\ display\ for\ the\ selected\ node\ is\ changed\ to\ \n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yellow\n
+comment8.params=delay
+comment8.target=void\ setDelay(int)
+comment9.params=tester
+comment9.target=void\ setTester(BinaryTreeTester)
+numComments=10
