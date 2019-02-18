@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=TreeSetTester
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=s
+comment2.target=void\ debug(java.lang.String)
+comment3.params=n
+comment3.target=int\ random(int)
+numComments=4

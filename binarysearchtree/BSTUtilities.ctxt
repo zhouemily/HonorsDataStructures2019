@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=BSTUtilities
+comment0.text=\n\ A\ collection\ of\ static\ methods\ for\ operating\ on\ binary\ search\ trees.\n\ \n\ @author\ Emily\ Zhou\n\ @version\ 12-03-2018\n
+comment1.params=t\ x\ display
+comment1.target=boolean\ contains(TreeNode,\ java.lang.Comparable,\ TreeDisplay)
+comment1.text=\ \n\ Check\ if\ a\ given\ binary\ search\ tree\ contains\ a\ value.\n\ \n\ performance\:\ O(h)\ where\ h\ is\ the\ height\ of\ the\ tree\n\ \n\ @precondition\:\ t\ is\ a\ binary\ search\ tree\ in\ ascending\ order\n\ @postcondition\:\ returns\ true\ if\ t\ contains\ the\ value\ x;\n\ \ \ \ \ \ \ \ \ \ \ \ otherwise,\ returns\ false\n
+comment2.params=t\ x\ display
+comment2.target=TreeNode\ insert(TreeNode,\ java.lang.Comparable,\ TreeDisplay)
+comment2.text=\n\ Insert\ a\ value\ to\ a\ binary\ search\ tree\ and\ ignore\ if\ duplicate\ value.\n\ \n\ performance\:\ O(h)\ where\ h\ is\ the\ height\ of\ the\ tree\n\ \n\ @precondition\:\ \ t\ is\ a\ binary\ search\ tree\ in\ ascending\ order\n\ @postcondition\:\ if\ t\ is\ empty,\ returns\ a\ new\ tree\ containing\ x;\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ otherwise,\ returns\ t,\ with\ x\ having\ been\ inserted\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ at\ the\ appropriate\ position\ to\ maintain\ the\ binary\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ search\ tree\ property;\ x\ is\ ignored\ if\ it\ is\ a\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ duplicate\ of\ an\ element\ already\ in\ t;\ only\ one\ new\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ TreeNode\ is\ created\ in\ the\ course\ of\ the\ traversal\n
+comment3.params=t\ display
+comment3.target=TreeNode\ deleteNode(TreeNode,\ TreeDisplay)
+comment3.text=\n\ Delete\ a\ value\ from\ a\ binary\ search\ tree.\n\ \n\ @precondition\:\ \ t\ is\ a\ binary\ search\ tree\ in\ ascending\ order\n\ @postcondition\:\ returns\ a\ pointer\ to\ a\ binary\ search\ tree,\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in\ which\ the\ value\ at\ node\ t\ has\ been\ deleted\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (and\ no\ new\ TreeNodes\ have\ been\ created)\n
+comment4.params=t\ x\ display
+comment4.target=TreeNode\ delete(TreeNode,\ java.lang.Comparable,\ TreeDisplay)
+comment4.text=\n\ Delete\ a\ value\ from\ a\ binary\ search\ tree.\n\ \n\ @precondition\:\ t\ is\ a\ binary\ search\ tree\ in\ ascending\ order\n\ @postcondition\:\ returns\ a\ pointer\ to\ a\ binary\ search\ tree,\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in\ which\ the\ value\ x\ has\ been\ deleted\ (if\ present)\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (and\ no\ new\ TreeNodes\ have\ been\ created)\n
+numComments=5

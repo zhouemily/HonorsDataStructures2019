@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=TreeUtil
+comment0.text=\n\ TreeUtil\ contains\ the\ following\ methods\ for\ manipulating\ binary\ trees\:\n\ leftmost\ -\ find\ the\ left\ most\ node\ \n\ rightmost\ -\ find\ the\ right\ most\ node\n\ maxDepth\ \ -\ compute\ max\ depth\n\ countNodes\ -\ count\ total\ number\ of\ nodes\n\ countLeaves\ -\ count\ total\ number\ of\ leaf\ nodes\n\ preOrder\ -\ preorder\ traverse\n\ inOrder\ \ -\ inorder\ traverse\n\ postOrder\ -\ postorder\ traverse\n\ fillList\ -\ fill\ node\ values\ to\ a\ list\n\ saveTree\ -\ save\ a\ tree\ to\ a\ file\n\ buildTree\ -\ build\ a\ tree\ of\ a\ list\ iterator\ of\ node\ values\n\ loadTree\ -\ restore\ a\ tree\ from\ a\ file\n\ copy\ -\ copy\ a\ tree\ to\ a\ new\ tree\n\ sameShape\ -\ check\ if\ 2\ trees\ have\ the\ same\ shape\n\ createRandom\ -\ creates\ a\ random\ tree\ of\ the\ specified\ depth\n\ createDecodingTree\ -\ creates\ a\ morse\ code\ decoding\ tree\n\ decodeMorse\ -\ decode\ morse\ code\n\ (to\ be\ continued)\n\ \n\ @author\ Emily\ Zhou\n\ @version\ 11-24-2018\n\n
+comment1.params=
+comment1.target=java.lang.String\ getUserInput()
+comment1.text=\n\ utility\ method\ that\ waits\ for\ a\ user\ to\ type\ text\ into\ Std\ Input\ and\ then\ press\ enter\n\ @return\ the\ string\ entered\ by\ the\ user\n
+comment2.params=
+comment2.target=void\ twentyQuestions()
+comment2.text=\ \n\ plays\ a\ game\ of\ 20\ questions\n\ Begins\ by\ reading\ in\ a\ starting\ file\ and\ then\ plays\ multiple\ rounds\n\ until\ the\ user\ enters\ "quit".\ \ Then\ the\ final\ tree\ is\ saved\n
+comment3.params=out
+comment3.target=void\ debugPrint(java.lang.String)
+comment3.text=\n\ debug\ printout\n\ postcondition\:\ out\ is\ printed\ to\ System.out\n\ @param\ out\ the\ string\ to\ send\ to\ System.out\n
+numComments=4
