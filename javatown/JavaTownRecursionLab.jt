@@ -1,0 +1,196 @@
+//A FancyCalc class that implements some math methods using recursion.
+//@author Emily Zhou
+//@version 9.12.18
+public class FancyCalc
+{
+        //Calculate the value of base to the power of exponent
+        //@param base the base number
+        //@param exponent the exponent
+        //@return the value of the base to the power of exponent
+	public pow(base, exponent)
+	{
+		if (exponent == 0)
+			return 1;
+		else 
+			return base*(this.pow(base, exponent-1));
+	}
+
+        //Calculate square of a number
+        //@param num the number to calculate
+        //@return the square of the number
+	public square(num)
+	{
+		return num*num;
+	}
+
+        //A fast way to calculate the value of base to the power of exponent
+        //@param base the base number
+        //@param exponent the exponent
+        //@return the value of the base to the power of exponent
+	public fastPow(base, exponent)
+	{
+		//base case
+		if (exponent == 0)
+			return 1;
+		if (exponent % 2 == 0)
+			return this.square(this.fastPow(base, exponent/2));
+		return base * this.fastPow(base, exponent-1);
+	}
+
+        //Compute the greatest common divisor of two positive integers
+        //@param a the first positive integer
+        //@param b the second positive integer
+        //@return the greatest common divisor of the two positive integers
+	public gcd(a, b)
+	{
+		if (b == 0)
+			return a;
+		return this.gcd(b, a % b);
+	}
+
+        //Determine if a number is prime number
+        //@param num the number to test
+        //@return true if the number is a prime number and false otherwise 
+	public isPrime(num)
+	{
+		return this.helpPrime(num, 2);
+	}
+
+        //Helper method to isPrime()
+	private helpPrime(num, divisor)
+	{
+		if (num <= 1)
+			return false;
+		if (divisor == num)
+			return true;
+		if (num % divisor == 0)
+			return false;
+		return this.helpPrime(num, divisor+1);
+	}
+
+        //Compute the factorial of a positive integer
+        //@param n the number to compute its factorial 
+        //@return the factorial of the number
+	public fact(n)
+	{
+		if (this.factHelp(n, 1) < 0)
+			return "Negative";
+		return this.factHelp(n, 1);
+	}
+
+        //Helper method of fact()
+	private factHelp(n, result)
+	{
+		if (n == 0)
+			return result;
+		else
+			return this.factHelp(n-1, result*n);
+	}
+
+        //Get the nth element of the Fibonacci sequence (1, 1, 2, 3, ...)
+        //@param n the nth element 
+        //@return the nth element in the Fibonacci sequence
+	public fib(n)
+	{
+		if (n == 1)
+			return 1;
+		if (n == 2)
+			return 1;
+		return this.fib(n-1) + this.fib(n-2);
+	}
+
+        //Compute the greatest integer whose square is no larger
+        //then a given number using Newton's method.
+        //@param num the number to compute its square-root
+        //@return the greatest integer whose square is no larger than the given number 
+	public sqrt(num)
+	{
+		return this.sqrtHelp(num, 1, true);
+	}
+
+        //Helper method for sqrt
+        //@param num the number
+        //@param guess the guess
+        //@param firstGuess if the method is called first time otherwise false
+        //@return the guess
+	private sqrtHelp(num, guess, firstGuess)
+	{
+		if (this.canContinue(num, guess, firstGuess))
+		{
+			return this.sqrtHelp(num, this.average(guess, num/guess), false);
+		}
+                return guess;
+              
+	}
+
+        //Determine if guess is good enough
+        //@param num the number
+        //@param guess the current guess
+        //@param firstGuess true if this is first time call 
+        //@return true if continue finding a better guess otherwise false
+	private canContinue(num, guess, firstGuess)
+	{
+		if (guess == num/guess)
+			return false;
+		if (guess == (num/guess)-1)
+			return false;
+                if (!firstGuess && guess * guess <= num)
+                        return false;
+		return true;
+	}
+
+        //Calculate the average of the 2 numbers
+	private average(num1, num2)
+	{
+		return (num1+num2)/2;
+	}
+	
+        //Sum the values returned from an enumerator
+        //@param en the enumerator
+        //@return the sum of values returned from the enumerator
+	public sumEnum(en) {
+		if (!en.hasNext()) {
+			return 0;
+		}
+		return en.next() + this.sumEnum(en);
+	}
+
+}
+
+
+//A Enumberator class that returns all integers
+//from a low to a high value when next() is called.
+//@author Emily Zhou
+//@version 8.31.18
+public class Enumerator
+{
+        private start;
+        private end;
+
+        //Construstor to create Enumerator object.
+        //@param num1 the low value number
+        //@param num2 the high value number
+        public Enumerator(num1,num2)
+        {
+                start = num1-1;
+                end = num2;
+        }
+
+        //Check if any more integers in the Enumerator instance.
+        //@return true if has more integers otherwise false
+        public hasNext()
+        {
+                if (start+1 <= end)
+                        return true;
+                return false;
+        }
+
+        //Get the next integer value.
+        //@return the next integer value
+        public next()
+        {
+                start= start+1;
+                return start;
+        }
+}
+

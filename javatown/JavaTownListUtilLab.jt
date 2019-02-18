@@ -1,0 +1,146 @@
+//ListNode class implements a linked list
+public class ListNode 
+{ 
+	private value; 
+	private next; 
+ 
+	public ListNode(initValue, initNext) {
+		value = initValue; 
+		next = initNext; 
+	} 
+	public getValue() {
+		return value;
+	} 
+	public getNext() { 
+		return next; 
+	} 
+  	public setValue(theNewValue) {
+		 value = theNewValue; 
+	}
+	public setNext(theNewNext) { 
+		next = theNewNext; 
+	} 
+}
+
+//A ListUtil class that implements some utility methods
+//that operates on linked list
+//@author Emily Zhou
+//@version 9.24.18
+public class ListUtil 
+{
+        //Find the size of a linked list
+        //@param list the linked list
+        //@return the size of the linked list
+	public size(list) {
+		if (list == null) {
+			return 0;
+		}
+		return 1 + this.size(list.getNext());
+             
+	}
+
+        //Get the value at specific index in a linked list
+        //@param list an non-empty linked list
+        //@param index the index to the linked list 
+        //@return the size of the linked list
+	public get(list, index) {
+		if (index == 0) {
+			return list.getValue();
+		}
+		return this.get(list.getNext(), index-1);
+	} 
+
+        //Make a linked list that is composed of specified 
+        //number of copies of a value
+        //@param copies the number of copies
+        //@param value the value to be duplicated in each element of the linked list
+        //@return a linked list made up of copies of the specified value
+	public makeList(copies, value) {
+		if (copies == 0) {
+			return null;
+		}
+		return new ListNode(value, this.makeList(copies-1, value));
+	} 
+
+        //Add a value to the end of a linked list without 
+        //creating more than 1 ListNode 
+        //@param list a non-empty linked list
+        //@param value the value to add to the end of the linked list 
+        //@return the head of the linked list
+	public add(list, value) {
+		if (list == null) {
+			return new ListNode(value, null);
+		}
+		list.setNext(this.add(list.getNext(), value));
+		return list;
+	}
+
+        //Remove all elements in a linked list that has a specific value
+        //@param list a non-empty linked list
+        //@param value the value to be remove from the linked list 
+        //@return the head of the linked list
+	public remove(list, value) {
+		if (list == null) {
+			return null;
+		}
+		if (list.getValue() == value) {
+			return this.remove(list.getNext(), value);
+		}
+		list.setNext(this.remove(list.getNext(), value));
+		return list;
+	}
+
+        //Reverse a linked list without creating any more nodes
+        //@param list the linked list
+	//@return the head of the reversed list      
+	public reverse(list) {
+		if (list == null) {
+			return null;
+		}		
+		if (list.getNext() == null) {
+			return list;
+		}
+		first = list;
+		second = list.getNext();
+		first.setNext(null);
+		newHead = this.reverse(second);
+		second.setNext(first);	 		
+		return newHead;
+	}
+
+}
+
+//A Memorizer class remembers if a given number has been seen
+//@author Emily Zhou
+//@version 9.25.18
+public class Memorizer 
+{
+	private mylist;
+
+     	//Check to see if a number has been before 
+	//@param num the number to check     	 
+	//@return true if the given number has seen before otherwise false
+	public seen(num) {
+		return this.helpSeen(num);
+	}
+
+	//@param num the number to check
+	//@return true if the number has been before otherwise false
+	private helpSeen(num) {
+		if (this.hasSeen(num, mylist))
+			return true;
+		mylist = new ListNode(num, mylist);
+		return false;
+	}
+
+	//@param num the number to check
+	//@param list the linked list to look for the given number
+	//@return true if the given number has been seen before otherwise false
+	private hasSeen(num, list) {
+		if (list == null)
+			return false;
+		if (list.getValue() == num)
+			return true;
+		return this.hasSeen(num, list.getNext());
+	}
+}

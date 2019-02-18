@@ -1,0 +1,236 @@
+//A calculator objects is capable of adding two numbers, subtracting two numbers, 
+//and multiplying two numbers.
+//@author Emily Zhou
+//@version 8.31.18
+public class Calculator
+{
+	//Constructs Calculator objects.
+	public Calculator() { }
+
+	//Adds two numbers given by the user.
+	//@param num1 the first number to add
+	//@param num2 the second number to add
+	//@return the sum of the two numbers
+	public add (num1, num2)
+	{
+		return num1+num2;
+	}
+
+	//Subtracts two numbers given by the user.
+	//@param num1 the first number to subtract
+	//@param num2 the second number to subtract
+	//@return the difference of the two numbers
+	public subtract (num1,num2)
+	{
+		return num1-num2;
+	}
+
+	//Multiplies two numbers given by the user.
+	//@param num1 the first number to multiply
+	//@param num2 the first number to multiply
+	//@return the product of the two numbers
+	public multiply (num1,num2)
+	{
+		return num1*num2;
+	}
+
+	//Squares the number giving by the user.
+	//@param num the number to square
+	//@return the square of the number 
+	public square(num)
+	{
+		return num*num;
+	}
+
+	//Checks if the number is odd or not.
+	//@param num the number to be checked
+	//@return true if then number is odd otherwise,
+	//	false
+	public isOdd(num)
+	{
+		return (num%2)==1;
+	}
+
+	//Finds the max between two numbers given by the user.
+	//@param num1 the first number to compare
+	//@param num2 the second number to compare
+	//@return the greater value between the two numbers
+	public max(num1, num2)
+	{
+		if (num1 > num2)
+			return num1;
+		else
+			return num2;
+	}
+
+	//Gives absolute value of the number given by the user.
+	//@param num the number to evaluate
+	//@return the absolute value of the number 
+	public abs(num)
+	{
+		if (num >= 0)
+			return num;
+		else
+			return num*-1;
+	}
+}
+
+// s t u f f      t o. T. To to to.  Ot
+//@author Emily Zhou
+//@version 8.31.18
+public class Box
+{
+	private value;
+
+	public Box (num)
+	{
+		value=num;
+	}
+
+	public getValue()
+	{
+		return value;
+	}
+	
+	public setValue(num)
+	{
+		value=num;
+	}
+}
+
+// s t u f f      t o. T. To to to.  Ot
+//@author Emily Zhou
+//@version 8.31.18
+public class Counter
+{
+	private count;
+	public Counter()
+	{
+		count = 0;
+	}
+	
+	public tick()
+	{
+		count= count + 1;
+	}
+
+	public getCount()
+	{
+		return count;
+	}
+
+	public reset()
+	{
+		count = 0;
+	}
+}
+
+// s t u f f      t o. T. To to to.  Ot
+//@author Emily Zhou
+//@version 8.31.18
+public class Flipper
+{
+	private flip;
+
+	public Flipper()
+	{
+		flip=false;
+	}
+
+	public next()
+	{
+		flip=!flip;
+	}
+}
+
+// s t u f f      t o. T. To to to.  Ot
+//@author Emily Zhou
+//@version 8.31.18
+public class Fibber
+{
+	private fib1;
+	private fib2;
+	private firstTime;
+	public Fibber() 
+	{
+		fib1 = 0;
+		fib2 = 1;
+		firstTime=true;
+	}
+
+	public next()
+	{
+		if (firstTime)
+		{
+			firstTime = false;
+			return 1;	
+		}
+		newvalue= fib1 + fib2;
+		fib1 = fib2;
+		fib2 = newvalue;
+		return newvalue;
+	}
+}
+
+public class Container
+{
+	private stuff;
+	
+	public Container(s)
+	{
+		stuff = s;
+	}
+
+	public getStuff()
+	{
+		return stuff;
+	}
+}
+
+// s t u f f      t o. T. To to to.  Ot
+//@author Emily Zhou
+//@version 8.31.18
+public class Swapper
+{
+	public Swapper() { }
+
+	public swap(c1,c2)
+	{
+		temp = new Container(c1.getStuff());
+		temp = c1;
+		c1 =c2;
+		c2 = temp;
+		temp = null;
+	}
+}
+
+// s t u f f      t o. T. To to to.  Ot
+//@author Emily Zhou
+//@version 8.31.18
+public class Enumerator
+{
+	private start;
+	private end;
+
+	public Enumerator(num1,num2)
+	{
+		start = num1-1;
+		end = num2;
+	}
+
+	public hasNext()
+	{
+		if (start+1 <= end)
+			return true;
+		return false;
+	}
+
+	public next()
+	{
+		start= start+1;
+		return start;
+	}
+}
+
+
+

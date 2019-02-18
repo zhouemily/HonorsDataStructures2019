@@ -1,0 +1,60 @@
+//Towers of Hanoi class uses recursion to move
+//a given number discs from one tower to another
+//using an auxiliary tower following the Towers
+//of Hanoi rules.
+//@author Emily Zhou
+//@version 9.12.18
+public class Towers
+{
+        //The number of discs 
+	private numDiscs;
+
+        //The total number of moveDisc calls
+        private numMoves;
+
+	//The constructor to create Towers object
+        //@param num the number of discs
+	public Towers(num)
+	{
+		numDiscs = num;
+		numMoves = 0;
+	}
+
+        //Move discs in one tower to another tower
+        //@param n the number of discs on source tower
+        //@param src the source tower where the discs are
+        //@param dest the destination tower the discs to be moved to
+        //@param temp the auxiliary tower used to help moving discs
+	public moveTower(n, src, dest, temp)
+	{
+		if(n > 0)
+		{
+		 	if (n == 1) {		
+                       		this.moveDisc(src, dest);  
+			} else {
+				this.moveTower(n-1, src, temp, dest);
+				this.moveDisc(src, dest);
+				this.moveTower(n-1, temp, dest, src);					
+		 	}		
+		}
+		else
+			return "Base Case! No discs to move";
+	}
+
+	//Move 1 disc from source tower to destination tower
+        //@param src the source tower where the disc is
+        //@param dest the destination tower the disc to move to
+	public moveDisc(src, dest)
+	{
+   		numMoves = numMoves + 1;
+		return "moving 1 disc from " + src + " to " + dest;
+	}
+
+	
+	//Solve Towers of Harioi puzzle.  
+	public solve()
+	{
+		this.moveTower(numDiscs, 1, 2, 3);
+	}
+}
+

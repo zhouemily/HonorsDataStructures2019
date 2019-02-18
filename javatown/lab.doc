@@ -1,0 +1,273 @@
+//A calculator class is capable of some simple mathematics operations. 
+//@author Emily Zhou
+//@version 8.31.18
+public class Calculator
+{
+	//Constructor to create Calculator object.
+	public Calculator() { }
+
+	//Adds two numbers.
+	//@param num1 the first number to add
+	//@param num2 the second number to add
+	//@return the sum of the two numbers
+	public add (num1, num2)
+	{
+		return num1+num2;
+	}
+
+	//Subtracts two numbers.
+	//@param num1 the number to subtract from
+	//@param num2 the number to subtract
+	//@return the difference of the first number subtracted by the second number
+	public subtract (num1,num2)
+	{
+		return num1-num2;
+	}
+
+	//Multiplies two numbers.
+	//@param num1 the first number to multiply
+	//@param num2 the first number to multiply
+	//@return the product of the two numbers
+	public multiply (num1,num2)
+	{
+		return num1*num2;
+	}
+
+	//Squares a number.
+	//@param num the number to square
+	//@return the square of the number 
+	public square(num)
+	{
+		return num*num;
+	}
+
+	//Checks if a number is odd or not.
+	//@param num the number to be checked
+	//@return true if the number is odd otherwise false
+	public isOdd(num)
+	{
+		return (num%2)==1;
+	}
+
+	//Finds the max between two numbers.
+	//@param num1 the first number to compare
+	//@param num2 the second number to compare
+	//@return the greater of two numbers or 
+        //        if the two numbers have the same value
+        //        the result is that same value
+	public max(num1, num2)
+	{
+		if (num1 > num2)
+			return num1;
+		else
+			return num2;
+	}
+
+	//Gives absolute value of a number.
+	//@param num the number to evaluate
+	//@return the absolute value of the number 
+	public abs(num)
+	{
+		if (num >= 0)
+			return num;
+		else
+			return num*-1;
+	}
+}
+
+//A Box class contains a value.
+//@author Emily Zhou
+//@version 8.31.18
+public class Box
+{
+	private value;
+
+        //Constructor to create Box object.
+	public Box (num)
+	{
+		value=num;
+	}
+
+        //Get the value in the Box instance.
+        //@return the value
+	public getValue()
+	{
+		return value;
+	}
+	
+        //Set the value in the Box instance
+        //@param num the value to set
+	public setValue(num)
+	{
+		value=num;
+	}
+}
+
+//A Counter class increments its count when tick() is called. 
+//@author Emily Zhou
+//@version 8.31.18
+public class Counter
+{
+	private count;
+        //Constructor to create a Counter object.
+	public Counter()
+	{
+		count = 0;
+	}
+ 	
+        //Increment the count.
+	public tick()
+	{
+		count= count + 1;
+	}
+
+        //Get the count.
+        //@return the count
+	public getCount()
+	{
+		return count;
+	}
+
+        //Reset the count.
+	public reset()
+	{
+		count = 0;
+	}
+}
+
+//A Flipper class flips true and flase vice versa each time next() is called.
+//@author Emily Zhou
+//@version 8.31.18
+public class Flipper
+{
+	private flip;
+
+        //Construstor to create Flipper object.
+	public Flipper()
+	{
+		flip = false;
+	}
+
+        //Get flipped value of previous returned.
+        //@return flipped value of current flip variable
+	public next()
+	{
+                flip = !flip;
+                return flip;
+	}
+}
+
+//A Fibber class returns a Fibonacci sequence (1, 1, 2, 3, 5, ...)
+//when next() is called consecutively.
+//@author Emily Zhou
+//@version 8.31.18
+public class Fibber
+{
+	private fib1;
+	private fib2;
+	private firstTime;
+	public Fibber() 
+	{
+		fib1 = 0;
+		fib2 = 1;
+		firstTime=true;
+	}
+
+	public next()
+	{
+		if (firstTime)
+		{
+			firstTime = false;
+			return 1;	
+		}
+		newvalue= fib1 + fib2;
+		fib1 = fib2;
+		fib2 = newvalue;
+		return newvalue;
+	}
+}
+
+//A Container class contains an integer.
+public class Container
+{
+	private stuff;
+	
+        //Construstor to create Container object.
+        //@param s the integer number to initialize
+        //         the Container object on creation
+	public Container(s)
+	{
+		stuff = s;
+	}
+
+        //Get the integer contained in the Container instance.
+        //@return the stuff
+	public getStuff()
+	{
+		return stuff;
+	}
+
+        //Set the integer value in the Container instance.
+        //@param v the value to set
+	public setStuff(v)
+	{
+		stuff = v;
+	}
+       
+}
+
+//A Swapper class to swap the integer values inside of 2 Container objects. 
+//@author Emily Zhou
+//@version 8.31.18
+public class Swapper
+{
+	public Swapper() { }
+
+        //Swap the integer values of the 2 Container objects.
+	//@param c1 the first Container object
+        //@param c2 the second Container object
+	public swap(c1,c2)
+	{
+		temp = c1.getStuff();
+                c1.setStuff(c2.getStuff());
+                c2.setStuff(temp);
+	}
+	
+	
+}
+
+//A Enumberator class that returns all integers
+//from a low to a high value when next() is called.
+//@author Emily Zhou
+//@version 8.31.18
+public class Enumerator
+{
+	private start;
+	private end;
+
+        //Construstor to create Enumerator object.
+        //@param num1 the low value number
+        //@param num2 the high value number
+	public Enumerator(num1,num2)
+	{
+		start = num1-1;
+		end = num2;
+	}
+
+        //Check if any more integers in the Enumerator instance.
+        //@return true if has more integers otherwise false
+	public hasNext()
+	{
+		if (start+1 <= end)
+			return true;
+		return false;
+	}
+
+        //Get the next integer value.
+        //@return the next integer value
+	public next()
+	{
+		start= start+1;
+		return start;
+	}
+}

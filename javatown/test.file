@@ -1,0 +1,49 @@
+public class Container
+{
+        private stuff;
+
+        //Construstor to create Container object.
+        //@param s the integer number to initialize
+        //         the Container object on creation
+        public Container(s)
+        {
+                stuff = s;
+        }
+
+        //Get the integer contained in the Container instance.
+        //@return the stuff
+        public getStuff()
+        {
+                return stuff;
+        }
+
+        //Set the integer value in the Container instance.
+        //@param v the value to set
+        public setStuff(v)
+        {
+                stuff = v;
+        }
+
+}
+
+public class CalStuff
+{
+        public CalStuff() { }
+
+        public cal(y)
+        {
+                if (y.getStuff() ==  1) {
+                  c = new Container(2);
+                }
+                stuff = c.getStuff();
+                return stuff;
+        }
+
+
+}
+
+//c = new Container(1);
+//calStuff = new CalStuff();
+//stuffReturned = calStuff.cal(c); //what is the value of stuffReturned ?
+//v = c.getStuff(); //what is the value of v ?
+
