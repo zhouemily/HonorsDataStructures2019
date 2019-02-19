@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=DoubleNode
+comment0.text=\n\ complete\ commenting\ of\ this\ class\ is\ required\n
+comment1.params=v
+comment1.target=DoubleNode(java.lang.Object)
+comment2.params=
+comment2.target=java.lang.Object\ getValue()
+comment3.params=
+comment3.target=DoubleNode\ getPrevious()
+comment4.params=
+comment4.target=DoubleNode\ getNext()
+comment5.params=v
+comment5.target=void\ setValue(java.lang.Object)
+comment6.params=p
+comment6.target=void\ setPrevious(DoubleNode)
+comment7.params=n
+comment7.target=void\ setNext(DoubleNode)
+numComments=8

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=MyLinkedListIteratorTester
+comment0.text=\n\ A\ tester\ for\ the\ MyLinkedList<E>\ class,\ focusing\ on\ iterators\ and\ various\n\ add()\ and\ remove()\ methods.\n\ \n\ @author\ Sumer\ Kohli\n\ @version\ 1.0.0r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\n\ This\ is\ the\ main\ method\ of\ the\ tester.\ Prepare\ for\ exceptions.\ I'm\ extremely\ mean\ on\ this\ one.\n
+numComments=2
