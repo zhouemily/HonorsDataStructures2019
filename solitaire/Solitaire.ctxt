@@ -1,0 +1,64 @@
+#BlueJ class context
+comment0.target=Solitaire
+comment0.text=\n\ This\ is\ the\ classic\ Klondike\ Solitaire\ card\ game.\n\ \n\ Once\ you\ start\ the\ game,\ the\ elapsed\ time\ is\ displayed\n\ on\ the\ game\ panel,\ and\ you\ have\ the\ option\ to\ start\ over\n\ the\ game\ anytime\ by\ click\ "Start\ Over"\ on\ the\ game\ panel.\ \n\n\ @author\ Emily\ Zhou\n\ @version\ 11-5-2018\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\n\ The\ main\ method\ to\ run\ the\ game.\n\ \n\ @param\ args\ no\ arguments\ expected\ to\ play\ this\ game.\n
+comment10.params=
+comment10.target=void\ wasteClicked()
+comment10.text=\n\ This\ method\ is\ called\ when\ the\ waste\ is\ clicked.\n
+comment11.params=index
+comment11.target=void\ foundationClicked(int)
+comment11.text=\n\ This\ method\ is\ called\ when\ a\ given\ foundation\ is\ clicked.\n\ \n\ @precondition\:\ \ 0\ <\=\ index\ <\ 4\n\ @param\ index\ the\ index\ of\ array\ of\ foundations\ that\ is\ clicked\n
+comment12.params=index
+comment12.target=void\ pileClicked(int)
+comment12.text=\n\ This\ method\ is\ called\ when\ a\ given\ pipe\ is\ clicked.\n\ \n\ @precondition\:\ \ 0\ <\=\ index\ <\ 7\n\ @param\ index\ the\ index\ of\ the\ array\ of\ piles\ that\ is\ clicked\n
+comment13.params=
+comment13.target=void\ createStock()
+comment13.text=\n\ Create\ the\ stock\ stack\ with\ 52\ randomly\ shuffed\ cards.\n
+comment14.params=
+comment14.target=void\ deal()
+comment14.text=\n\ Deal\ cards\ from\ stock\ to\ piles.\ \n
+comment15.params=
+comment15.target=void\ dealThreeCards()
+comment15.text=\n\ Deal\ 3\ cards\ from\ stock\ to\ waste.\n\ If\ less\ than\ 3\ cards\ left\ in\ stock,\ deal\ all\ of\ them\ to\ waste.\n
+comment16.params=
+comment16.target=void\ resetStock()
+comment16.text=\n\ Reset\ the\ stock\ to\ move\ all\ cards\ from\ waste\ to\ stock.\n
+comment17.params=card\ index
+comment17.target=boolean\ canAddToPile(Card,\ int)
+comment17.text=\n\ Check\ if\ a\ card\ can\ be\ legally\ added\ to\ a\ pile.\n\ \n\ @precondition\:\ 0\ <\=\ index\ <\ 7\n\ @postcondition\:\ Returns\ true\ if\ the\ given\ card\ can\ be\n\ \ \ \ \ \ \ \ legally\ moved\ to\ the\ top\ of\ the\ given\ pile\n\ @param\ card\ the\ card\ to\ check\n\ @param\ index\ the\ index\ into\ the\ array\ of\ piles\n\ @return\ true\ if\ the\ card\ can\ be\ legally\ moved\ to\ the\ pile\n\ \ \ \ \ \ \ \ \ false\ otherwise\n
+comment18.params=index
+comment18.target=java.util.Stack\ removeFaceUpCards(int)
+comment18.text=\n\ Remove\ all\ face-up\ cards\ on\ the\ top\ of\ a\ pile.\n\ \n\ @precondition\:\ \ 0\ <\=\ index\ <\ 7\n\ @postcondition\:\ Removes\ all\ face-up\ cards\ on\ the\ top\ of\n\ \ \ \ \ \ \ \ the\ given\ pile;\ returns\ a\ stack\n\ \ \ \ \ \ \ \ containing\ these\ cards\n\ @param\ index\ the\ index\ into\ the\ array\ of\ piles\n\ @return\ a\ Stack\ of\ cards\ that\ removed\ from\ the\ pile\n
+comment19.params=cards\ index
+comment19.target=void\ addToPile(java.util.Stack,\ int)
+comment19.text=\n\ Add\ a\ stack\ of\ cards\ to\ a\ given\ pile.\n\ \n\ @precondition\:\ 0\ <\=\ index\ <\ 7\n\ @postcondition\:\ Removes\ elements\ from\ cards,\ and\ adds\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ them\ to\ the\ given\ pile.\n\ @param\ cards\ a\ stack\ of\ cards\ that\ to\ be\ added\ to\ the\ given\ pile\n\ @param\ index\ the\ index\ into\ the\ array\ of\ piles\n
+comment2.params=
+comment2.target=Solitaire()
+comment2.text=\n\ The\ constructor\ to\ create\ a\ Solitaire\ object.\n
+comment20.params=card\ index
+comment20.target=boolean\ canAddToFoundation(Card,\ int)
+comment20.text=\n\ Check\ if\ a\ card\ can\ be\ legally\ added\ to\ a\ foundation.\n\ \n\ @precondition\:\ 0\ <\=\ index\ <\ 4\n\ @postcondition\:\ Returns\ true\ if\ the\ given\ card\ can\ be\n\ \ \ \ \ legally\ moved\ to\ the\ top\ of\ the\ given\ foundation\n\ @param\ card\ the\ card\ to\ check\n\ @param\ index\ the\ index\ into\ the\ array\ of\ foundations\n\ @return\ true\ if\ the\ card\ can\ be\ legally\ added\ to\n\ \ \ \ \ \ \ \ \ the\ given\ foundation\ otherwise\ false\n
+comment3.params=
+comment3.target=void\ init()
+comment3.text=\n\ Initialize\ the\ game.\n
+comment4.params=
+comment4.target=void\ startOverClicked()
+comment4.text=\n\ This\ is\ called\ when\ the\ start\ over\ is\ clicked\ to\ restart\ the\ game.\n
+comment5.params=
+comment5.target=Card\ getStockCard()
+comment5.text=\n\ Peek\ the\ card\ on\ top\ of\ the\ stock.\n\ \n\ @returns\ the\ card\ on\ top\ of\ the\ stock,\n\ \ \ \ \ \ \ \ \ or\ null\ if\ the\ stock\ is\ empty\n
+comment6.params=
+comment6.target=Card\ getWasteCard()
+comment6.text=\n\ Peek\ the\ card\ on\ top\ of\ the\ waste.\n\ \n\ @returns\ the\ card\ on\ top\ of\ the\ waste,\n\ \ \ \ \ \ \ \ \ or\ null\ if\ the\ waste\ is\ empty\n
+comment7.params=index
+comment7.target=Card\ getFoundationCard(int)
+comment7.text=\n\ Peek\ the\ card\ on\ top\ of\ the\ specified\ foundation.\n\ \n\ @precondition\:\ \ 0\ <\=\ index\ <\ 4\n\ @postcondition\:\ returns\ the\ card\ on\ top\ of\ the\ given\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ foundation,\ or\ null\ if\ the\ foundation\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ is\ empty\n\ @param\ index\ the\ index\ into\ the\ foundation\ array\ \ \ \ \ \ \ \ \ \ \ \ \ \n\ @return\ the\ card\ on\ top\ of\ the\ given\ foundation\n\ \ \ \ \ \ \ \ \ \ \ \ \ or\ null\ if\ the\ foundation\ is\ empty\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \n
+comment8.params=index
+comment8.target=java.util.Stack\ getPile(int)
+comment8.text=\n\ Get\ a\ reference\ to\ a\ given\ pile.\n\ \n\ @precondition\:\ \ 0\ <\=\ index\ <\ 7\n\ @postcondition\:\ returns\ a\ reference\ to\ the\ given\ pile\n\ \n\ @param\ index\ the\ index\ into\ the\ array\ of\ piles\n\ @return\ the\ reference\ of\ given\ pile\n
+comment9.params=
+comment9.target=void\ stockClicked()
+comment9.text=\n\ This\ method\ is\ called\ when\ the\ stock\ is\ clicked.\n
+numComments=21
